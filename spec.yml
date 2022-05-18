@@ -97,7 +97,7 @@ paths:
           required: true
           type: "integer"
           format: "int64"
-  /v1/products/:
+  /v1/products:
     get:
       summary: The Payment Service
       operationId: products-list-v1
@@ -311,7 +311,7 @@ paths:
       responses:
         '200':
           description: OK
-  /v1/return/:
+  /v1/return:
     get:
       summary: The Return Service
       operationId: return-get-v1

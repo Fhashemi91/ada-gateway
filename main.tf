@@ -1,6 +1,6 @@
 locals {
   api_config_id_prefix     = "api"
-  api_gateway_container_id = "api-gw"
+  api_gateway_container_id = "return-api-gw"
   gateway_id               = "gw"
 }
 
