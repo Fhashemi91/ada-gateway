@@ -1,0 +1,304 @@
+swagger: '2.0'
+info:
+  title: api-gateway
+  description: API Gateway
+  version: 1.0.0
+schemes:
+  - https
+produces:
+  - application/json
+paths:
+  /v1/payments/{user_id}/payment:
+    post:
+      summary: The Payment Service
+      operationId: payment-make-v1
+      x-google-backend:
+        address: https://payment-service-bmftoimaia-ew.a.run.app/payments/{user_id}/payment
+      responses:
+        '200':
+          description: OK
+      parameters:
+        - name: "user_id"
+          in: "path"
+          description: "ID of the user"
+          required: true
+          type: "integer"
+          format: "int64"
+  /v1/payments/{user_id}:
+    get:
+      summary: The Payment Service
+      operationId: payment-get-v1
+      x-google-backend:
+        address: https://payment-service-bmftoimaia-ew.a.run.app/payments/{user_id}
+      responses:
+        '200':
+          description: OK
+      parameters:
+        - name: "user_id"
+          in: "path"
+          description: "ID of the user"
+          required: true
+          type: "integer"
+          format: "int64"          
+  /v1/payments/pay/{user_id}:
+    get:
+      summary: The Payment Service
+      operationId: payment-pay-v1
+      x-google-backend:
+        address: https://payment-service-bmftoimaia-ew.a.run.app/pay/{user_id}
+      responses:
+        '200':
+          description: OK
+      parameters:
+        - name: "user_id"
+          in: "path"
+          description: "ID of the user"
+          required: true
+          type: "integer"
+          format: "int64"          
+  /v1/payments/pay/{user_id}/success:
+    get:
+      summary: The Payment Service
+      operationId: payment-pay-success-v1
+      x-google-backend:
+        address: https://payment-service-bmftoimaia-ew.a.run.app/pay/{user_id}/success
+      responses:
+        '200':
+          description: OK
+      parameters:
+        - name: "user_id"
+          in: "path"
+          description: "ID of the user"
+          required: true
+          type: "integer"
+          format: "int64"          
+  /v1/product:
+    get:
+      summary: The Product Service
+      operationId: product-v1
+      x-google-backend:
+        address: https://product-service-bmftoimaia-ew.a.run.app
+      responses:
+        '200':
+          description: OK
+  /v1/products/new/{admin_id}:
+    post:
+      summary: The Payment Service
+      operationId: products-new-v1
+      x-google-backend:
+        address: https://products-service-bmftoimaia-ew.a.run.app/products/new/{admin_id}
+      responses:
+        '200':
+          description: OK
+      parameters:
+        - name: "admin_id"
+          in: "path"
+          description: "ID of the admin"
+          required: true
+          type: "integer"
+          format: "int64"
+  /v1/products/:
+    get:
+      summary: The Payment Service
+      operationId: products-list-v1
+      x-google-backend:
+        address: https://products-service-bmftoimaia-ew.a.run.app/products
+      responses:
+        '200':
+          description: OK
+  /v1/products/{product_id}:
+    get:
+      summary: The Payment Service
+      operationId: products-detail-v1
+      x-google-backend:
+        address: https://products-service-bmftoimaia-ew.a.run.app/products/{product_id}
+      responses:
+        '200':
+          description: OK
+      parameters:
+        - name: "product_id"
+          in: "path"
+          description: "ID of the product"
+          required: true
+          type: "integer"
+          format: "int64"
+  /v1/products/update/amount/{admin_id}:
+    post:
+      summary: The Payment Service
+      operationId: products-update-amount-v1
+      x-google-backend:
+        address: https://products-service-bmftoimaia-ew.a.run.app/products/update/amount/{admin_id}
+      responses:
+        '200':
+          description: OK
+      parameters:
+        - name: "admin_id"
+          in: "path"
+          description: "ID of the admin"
+          required: true
+          type: "integer"
+          format: "int64"
+  /v1/products/update/price/{admin_id}:
+    post:
+      summary: The Payment Service
+      operationId: products-update-price-v1
+      x-google-backend:
+        address: https://products-service-bmftoimaia-ew.a.run.app/products/update/price/{admin_id}
+      responses:
+        '200':
+          description: OK
+      parameters:
+        - name: "admin_id"
+          in: "path"
+          description: "ID of the admin"
+          required: true
+          type: "integer"
+          format: "int64"                    
+  /v1/orders:
+    post:
+      summary: The Order Service
+      operationId: order-v1-create
+      x-google-backend:
+        address: https://order-service-bmftoimaia-ew.a.run.app/orders
+      responses:
+        '200':
+          description: OK
+  /v1/orders/{o_id}:
+    get:
+      summary: The Order Service
+      operationId: order-detail-v1
+      x-google-backend:
+        address: https://order-service-bmftoimaia-ew.a.run.app/orders/{o_id}
+      responses:
+        '200':
+          description: OK
+      parameters:
+        - name: "o_id"
+          in: "path"
+          description: "ID of the order"
+          required: true
+          type: "integer"
+          format: "int64"
+  /v1/orders/{o_id}/status:
+    put:
+      summary: The Order Service
+      operationId: order-detail-status-v1
+      x-google-backend:
+        address: https://order-service-bmftoimaia-ew.a.run.app/orders/{o_id}/status
+      responses:
+        '200':
+          description: OK
+      parameters:
+        - name: "o_id"
+          in: "path"
+          description: "ID of the order"
+          required: true
+          type: "integer"
+          format: "int64"
+  /v1/orders/{o_id}/remove:
+    delete:
+      summary: The Order Service
+      operationId: order-detail-delete-v1
+      x-google-backend:
+        address: https://order-service-bmftoimaia-ew.a.run.app/orders/{o_id}
+      responses:
+        '200':
+          description: OK
+      parameters:
+        - name: "o_id"
+          in: "path"
+          description: "ID of the order"
+          required: true
+          type: "integer"
+          format: "int64"                                                  
+  /v1/customers:
+    post:
+      summary: The Customer Service
+      operationId: customer-create-v1
+      x-google-backend:
+        address: https://customer-service-bmftoimaia-ew.a.run.app/customers
+      responses:
+        '200':
+          description: OK
+  /v1/customers/getAll:
+    post:
+      summary: The Customer Service
+      operationId: customer-getall-v1
+      x-google-backend:
+        address: https://customer-service-bmftoimaia-ew.a.run.app/customers/getAll
+      responses:
+        '200':
+          description: OK          
+  /v1/customers/{c_id}:
+    get:
+      summary: The Customer Service
+      operationId: customer-get-v1
+      x-google-backend:
+        address: https://customer-service-bmftoimaia-ew.a.run.app/customers/{c_id}
+      responses:
+        '200':
+          description: OK
+      parameters:
+        - name: "c_id"
+          in: "path"
+          description: "ID of the customer"
+          required: true
+          type: "integer"
+          format: "int64"
+  /v1/customers/{c_id}/delete:
+    delete:
+      summary: The Customer Service
+      operationId: customer-delete-v1
+      x-google-backend:
+        address: https://customer-service-bmftoimaia-ew.a.run.app/customers/{c_id}
+      responses:
+        '200':
+          description: OK
+      parameters:
+        - name: "c_id"
+          in: "path"
+          description: "ID of the customer"
+          required: true
+          type: "integer"
+          format: "int64"          
+  /v1/customers/login:
+    put:
+      summary: The Customer Service
+      operationId: customer-login-v1
+      x-google-backend:
+        address: https://customer-service-bmftoimaia-ew.a.run.app/customers/login
+      responses:
+        '200':
+          description: OK
+  /v1/customers/{c_id}/logout:
+    put:
+      summary: The Customer Service
+      operationId: customer-logout-v1
+      x-google-backend:
+        address: https://customer-service-bmftoimaia-ew.a.run.app/customers/{c_id}/logout
+      responses:
+        '200':
+          description: OK
+      parameters:
+        - name: "c_id"
+          in: "path"
+          description: "ID of the customer"
+          required: true
+          type: "integer"
+          format: "int64"
+  /v1/customers/{c_id}/update:
+    put:
+      summary: The Customer Service
+      operationId: customer-update-v1
+      x-google-backend:
+        address: https://customer-service-bmftoimaia-ew.a.run.app/customers/{c_id}/update
+      responses:
+        '200':
+          description: OK
+      parameters:
+        - name: "c_id"
+          in: "path"
+          description: "ID of the customer"
+          required: true
+          type: "integer"
+          format: "int64"
