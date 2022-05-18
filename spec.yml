@@ -302,3 +302,48 @@ paths:
           required: true
           type: "integer"
           format: "int64"
+  /v1/return/new:
+    post:
+      summary: The Return Service
+      operationId: return-create-v1
+      x-google-backend:
+        address: 
+      responses:
+        '200':
+          description: OK
+  /v1/return/:
+    get:
+      summary: The Return Service
+      operationId: return-get-v1
+      x-google-backend:
+        address: 
+      responses:
+        '200':
+          description: OK
+  /v1/return/all:
+    get:
+      summary: The Return Service
+      operationId: return-get-all-v1
+      x-google-backend:
+        address: 
+      responses:
+        '200':
+          description: OK
+  /v1/return/status:
+    put:
+      summary: The Return Service
+      operationId: return-status-v1
+      x-google-backend:
+        address: 
+      responses:
+        '200':
+          description: OK
+  /v1/return/delete:
+    put:
+      summary: The Return Service
+      operationId: return-delete-v1
+      x-google-backend:
+        address: 
+      responses:
+        '200':
+          description: OK
