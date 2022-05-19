@@ -72,21 +72,12 @@ paths:
           required: true
           type: "integer"
           format: "int64"          
-  /v1/product:
-    get:
-      summary: The Product Service
-      operationId: product-v1
-      x-google-backend:
-        address: https://product-service-bmftoimaia-ew.a.run.app
-      responses:
-        '200':
-          description: OK
   /v1/products/new/{admin_id}:
     post:
       summary: The Payment Service
       operationId: products-new-v1
       x-google-backend:
-        address: https://products-service-bmftoimaia-ew.a.run.app/products/new/{admin_id}
+        address: https://product-service-bmftoimaia-ew.a.run.app/products/new/{admin_id}
       responses:
         '200':
           description: OK
@@ -102,7 +93,7 @@ paths:
       summary: The Payment Service
       operationId: products-list-v1
       x-google-backend:
-        address: https://products-service-bmftoimaia-ew.a.run.app/products
+        address: https://product-service-bmftoimaia-ew.a.run.app/products
       responses:
         '200':
           description: OK
@@ -111,7 +102,7 @@ paths:
       summary: The Payment Service
       operationId: products-detail-v1
       x-google-backend:
-        address: https://products-service-bmftoimaia-ew.a.run.app/products/{product_id}
+        address: https://product-service-bmftoimaia-ew.a.run.app/products/{product_id}
       responses:
         '200':
           description: OK
@@ -127,7 +118,7 @@ paths:
       summary: The Payment Service
       operationId: products-update-amount-v1
       x-google-backend:
-        address: https://products-service-bmftoimaia-ew.a.run.app/products/update/amount/{admin_id}
+        address: https://product-service-bmftoimaia-ew.a.run.app/products/update/amount/{admin_id}
       responses:
         '200':
           description: OK
@@ -143,7 +134,7 @@ paths:
       summary: The Payment Service
       operationId: products-update-price-v1
       x-google-backend:
-        address: https://products-service-bmftoimaia-ew.a.run.app/products/update/price/{admin_id}
+        address: https://product-service-bmftoimaia-ew.a.run.app/products/update/price/{admin_id}
       responses:
         '200':
           description: OK
