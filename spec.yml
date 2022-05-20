@@ -8,12 +8,13 @@ schemes:
 produces:
   - application/json
 paths:
-  /v1/payments/{user_id}/payment:
+  /payments/{user_id}/payment:
     post:
       summary: The Payment Service
       operationId: payment-make-v1
       x-google-backend:
-        address: https://payment-service-bmftoimaia-ew.a.run.app/payments/{user_id}/payment
+        address: https://payment-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
@@ -24,12 +25,13 @@ paths:
           required: true
           type: "integer"
           format: "int64"
-  /v1/payments/{user_id}:
+  /payments/{user_id}:
     get:
       summary: The Payment Service
       operationId: payment-get-v1
       x-google-backend:
-        address: https://payment-service-bmftoimaia-ew.a.run.app/payments/{user_id}
+        address: https://payment-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
@@ -40,12 +42,13 @@ paths:
           required: true
           type: "integer"
           format: "int64"          
-  /v1/payments/pay/{user_id}:
+  /payments/pay/{user_id}:
     get:
       summary: The Payment Service
       operationId: payment-pay-v1
       x-google-backend:
-        address: https://payment-service-bmftoimaia-ew.a.run.app/pay/{user_id}
+        address: https://payment-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
@@ -56,12 +59,13 @@ paths:
           required: true
           type: "integer"
           format: "int64"          
-  /v1/payments/pay/{user_id}/success:
+  /payments/pay/{user_id}/success:
     get:
       summary: The Payment Service
       operationId: payment-pay-success-v1
       x-google-backend:
-        address: https://payment-service-bmftoimaia-ew.a.run.app/pay/{user_id}/success
+        address: https://payment-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
@@ -72,12 +76,13 @@ paths:
           required: true
           type: "integer"
           format: "int64"          
-  /v1/products/new/{admin_id}:
+  /products/new/{admin_id}:
     post:
       summary: The Payment Service
       operationId: products-new-v1
       x-google-backend:
-        address: https://product-service-bmftoimaia-ew.a.run.app/products/new/{admin_id}
+        address: https://product-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
@@ -88,21 +93,23 @@ paths:
           required: true
           type: "integer"
           format: "int64"
-  /v1/products:
+  /products:
     get:
       summary: The Payment Service
       operationId: products-list-v1
       x-google-backend:
-        address: https://product-service-bmftoimaia-ew.a.run.app/products
+        address: https://product-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
-  /v1/products/{product_id}:
+  /products/{product_id}:
     get:
       summary: The Payment Service
       operationId: products-detail-v1
       x-google-backend:
-        address: https://product-service-bmftoimaia-ew.a.run.app/products/{product_id}
+        address: https://product-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
@@ -113,12 +120,13 @@ paths:
           required: true
           type: "integer"
           format: "int64"
-  /v1/products/update/amount/{admin_id}:
+  /products/update/amount/{admin_id}:
     post:
       summary: The Payment Service
       operationId: products-update-amount-v1
       x-google-backend:
-        address: https://product-service-bmftoimaia-ew.a.run.app/products/update/amount/{admin_id}
+        address: https://product-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
@@ -129,12 +137,13 @@ paths:
           required: true
           type: "integer"
           format: "int64"
-  /v1/products/update/price/{admin_id}:
+  /products/update/price/{admin_id}:
     post:
       summary: The Payment Service
       operationId: products-update-price-v1
       x-google-backend:
-        address: https://product-service-bmftoimaia-ew.a.run.app/products/update/price/{admin_id}
+        address: https://product-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
@@ -145,21 +154,23 @@ paths:
           required: true
           type: "integer"
           format: "int64"                    
-  /v1/orders:
+  /orders:
     post:
       summary: The Order Service
       operationId: order-v1-create
       x-google-backend:
-        address: https://order-service-bmftoimaia-ew.a.run.app/orders
+        address: https://order-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
-  /v1/orders/{o_id}:
+  /orders/{o_id}:
     get:
       summary: The Order Service
       operationId: order-detail-v1
       x-google-backend:
-        address: https://order-service-bmftoimaia-ew.a.run.app/orders/{o_id}
+        address: https://order-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
@@ -170,12 +181,13 @@ paths:
           required: true
           type: "integer"
           format: "int64"
-  /v1/orders/{o_id}/status:
+  /orders/{o_id}/status:
     put:
       summary: The Order Service
       operationId: order-detail-status-v1
       x-google-backend:
-        address: https://order-service-bmftoimaia-ew.a.run.app/orders/{o_id}/status
+        address: https://order-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
@@ -186,12 +198,13 @@ paths:
           required: true
           type: "integer"
           format: "int64"
-  /v1/orders/{o_id}/remove:
+  /orders/{o_id}/remove:
     delete:
       summary: The Order Service
       operationId: order-detail-delete-v1
       x-google-backend:
-        address: https://order-service-bmftoimaia-ew.a.run.app/orders/{o_id}
+        address: https://order-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
@@ -202,30 +215,33 @@ paths:
           required: true
           type: "integer"
           format: "int64"                                                  
-  /v1/customers:
+  /customers:
     post:
       summary: The Customer Service
       operationId: customer-create-v1
       x-google-backend:
-        address: https://customer-service-bmftoimaia-ew.a.run.app/customers
+        address: https://customer-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
-  /v1/customers/getAll:
+  /customers/getAll:
     post:
       summary: The Customer Service
       operationId: customer-getall-v1
       x-google-backend:
-        address: https://customer-service-bmftoimaia-ew.a.run.app/customers/getAll
+        address: https://customer-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK          
-  /v1/customers/{c_id}:
+  /customers/{c_id}:
     get:
       summary: The Customer Service
       operationId: customer-get-v1
       x-google-backend:
-        address: https://customer-service-bmftoimaia-ew.a.run.app/customers/{c_id}
+        address: https://customer-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
@@ -236,12 +252,13 @@ paths:
           required: true
           type: "integer"
           format: "int64"
-  /v1/customers/{c_id}/delete:
+  /customers/{c_id}/delete:
     delete:
       summary: The Customer Service
       operationId: customer-delete-v1
       x-google-backend:
-        address: https://customer-service-bmftoimaia-ew.a.run.app/customers/{c_id}
+        address: https://customer-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
@@ -252,21 +269,23 @@ paths:
           required: true
           type: "integer"
           format: "int64"          
-  /v1/customers/login:
+  /customers/login:
     put:
       summary: The Customer Service
       operationId: customer-login-v1
       x-google-backend:
-        address: https://customer-service-bmftoimaia-ew.a.run.app/customers/login
+        address: https://customer-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
-  /v1/customers/{c_id}/logout:
+  /customers/{c_id}/logout:
     put:
       summary: The Customer Service
       operationId: customer-logout-v1
       x-google-backend:
-        address: https://customer-service-bmftoimaia-ew.a.run.app/customers/{c_id}/logout
+        address: https://customer-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
@@ -277,12 +296,13 @@ paths:
           required: true
           type: "integer"
           format: "int64"
-  /v1/customers/{c_id}/update:
+  /customers/{c_id}/update:
     put:
       summary: The Customer Service
       operationId: customer-update-v1
       x-google-backend:
-        address: https://customer-service-bmftoimaia-ew.a.run.app/customers/{c_id}/update
+        address: https://customer-service-bmftoimaia-ew.a.run.app/
+        path_translation: APPEND_PATH_TO_ADDRESS
       responses:
         '200':
           description: OK
